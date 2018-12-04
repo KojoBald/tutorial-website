@@ -42,6 +42,9 @@ body {
 
 #content .box {
   position: relative;
+  will-change: height;
+  transition: height 500ms ease;
+  overflow: hidden;
 }
 
 #content .box p {
@@ -51,8 +54,27 @@ body {
 
 #content .box .expand {
   position: absolute;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  bottom: .5rem;
+  right: .5rem;
+}
+
+#content .box .expand::before {
+  content: 'See More';
+}
+
+#content .box .expand.expanded::before {
+  content: 'See Less';
+}
+
+.description {
+  position: absolute;
+  padding: 1.5rem 1.5rem 0 0;
+  margin-bottom: 1.5rem;
+}
+
+.description.hidden {
+  visibility: hidden;
+  top: 100%;
 }
 
 #links {

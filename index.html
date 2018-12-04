@@ -25,7 +25,7 @@
           <p class="menu-label">Javascript</p>
           <ul class="menu-list">
             <li>
-              <a>Functions</a>
+              <a id="functionsNavButton" onclick="toggleDescription('functions')">Functions</a>
               <ul>
                 <li><a>naming</a></li>
                 <li><a>arguments</a></li>
@@ -33,38 +33,73 @@
                 <li><a>calling a function</a></li>
               </ul>
             </li>
-            <li><a>Objects</a></li>
-            <li><a>Arrays</a></li>
-            <li><a>For Loops</a></li>
-            <li><a>Conditionals</a></li>
+            <li><a id="objectsNavButton" onclick="toggleDescription('objects')">Objects</a></li>
+            <li><a id="arraysNavButton" onclick="toggleDescription('arrays')">Arrays</a></li>
+            <li><a id="forLoopsNavButton" onclick="toggleDescription('forLoops')">For Loops</a></li>
+            <li><a id="conditionalsNavButton" onclick="toggleDescription('conditionals')">Conditionals</a></li>
           </ul>
         </aside>
       </section>
       <section class="column section" id="content">
+
         <div class="box" id="functions">
           <h1 class="title">Functions</h1>
           <p class="subtitle is-4">functions description</p>
-          <span class="expand button is-inverted is-link is-medium">See More</span>
+          <span class="expand button is-inverted is-link is-medium" id="functionsExpandButton" onclick="toggleDescription('functions')"></span>
+          <div id="functionsDescription" class="description hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi enim nunc faucibus a pellentesque. Aliquet eget sit amet tellus cras adipiscing enim eu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Justo eget magna fermentum iaculis eu non diam. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Bibendum neque egestas congue quisque egestas diam in arcu. Nunc non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in. Facilisis gravida neque convallis a cras semper. Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Amet purus gravida quis blandit turpis cursus in hac habitasse. Sit amet consectetur adipiscing elit pellentesque habitant. Consectetur libero id faucibus nisl tincidunt. Odio eu feugiat pretium nibh ipsum consequat nisl. Quam lacus suspendisse faucibus interdum posuere lorem. Ullamcorper sit amet risus nullam eget felis. Malesuada fames ac turpis egestas sed tempus. Lorem ipsum dolor sit amet consectetur adipiscing.
+
+Placerat in egestas erat imperdiet sed euismod nisi. Amet cursus sit amet dictum sit amet. Habitasse platea dictumst quisque sagittis purus sit. Nisi est sit amet facilisis magna etiam. Etiam sit amet nisl purus in. Sit amet massa vitae tortor condimentum lacinia. Massa sapien faucibus et molestie. Est velit egestas dui id ornare arcu odio ut sem. Pellentesque sit amet porttitor eget dolor. In tellus integer feugiat scelerisque varius morbi enim. A pellentesque sit amet porttitor eget dolor morbi non arcu. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Eget gravida cum sociis natoque. Et netus et malesuada fames ac. Augue neque gravida in fermentum et sollicitudin ac. A diam maecenas sed enim ut sem viverra aliquet eget. A condimentum vitae sapien pellentesque habitant morbi tristique senectus et. Urna duis convallis convallis tellus.
+
+Vel elit scelerisque mauris pellentesque pulvinar. Scelerisque in dictum non consectetur a erat nam at. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Facilisi cras fermentum odio eu. Venenatis tellus in metus vulputate. Purus in massa tempor nec. Euismod lacinia at quis risus sed vulputate odio ut. Tortor dignissim convallis aenean et. Et odio pellentesque diam volutpat. Nunc congue nisi vitae suscipit tellus mauris. Vulputate dignissim suspendisse in est ante in. Sit amet massa vitae tortor condimentum. Nibh tellus molestie nunc non blandit massa enim nec dui. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Feugiat in ante metus dictum at. Viverra vitae congue eu consequat ac. Ultricies integer quis auctor elit sed. Nec ultrices dui sapien eget mi.
+          </div>
         </div>
+
         <div class="box" id="objects">
           <h1 class="title">Objects</h1>
           <p class="subtitle is-4">Objects description</p>
-          <span class="expand button is-inverted is-link is-medium">See More</span>
+          <span class="expand button is-inverted is-link is-medium" id="objectsExpandButton" onclick="toggleDescription('objects')"></span>
+          <div id="objectsDescription" class="description hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi enim nunc faucibus a pellentesque. Aliquet eget sit amet tellus cras adipiscing enim eu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Justo eget magna fermentum iaculis eu non diam. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Bibendum neque egestas congue quisque egestas diam in arcu. Nunc non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in. Facilisis gravida neque convallis a cras semper. Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Amet purus gravida quis blandit turpis cursus in hac habitasse. Sit amet consectetur adipiscing elit pellentesque habitant. Consectetur libero id faucibus nisl tincidunt. Odio eu feugiat pretium nibh ipsum consequat nisl. Quam lacus suspendisse faucibus interdum posuere lorem. Ullamcorper sit amet risus nullam eget felis. Malesuada fames ac turpis egestas sed tempus. Lorem ipsum dolor sit amet consectetur adipiscing.
+
+          Placerat in egestas erat imperdiet sed euismod nisi. Amet cursus sit amet dictum sit amet. Habitasse platea dictumst quisque sagittis purus sit. Nisi est sit amet facilisis magna etiam. Etiam sit amet nisl purus in. Sit amet massa vitae tortor condimentum lacinia. Massa sapien faucibus et molestie. Est velit egestas dui id ornare arcu odio ut sem. Pellentesque sit amet porttitor eget dolor. In tellus integer feugiat scelerisque varius morbi enim. A pellentesque sit amet porttitor eget dolor morbi non arcu. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Eget gravida cum sociis natoque. Et netus et malesuada fames ac. Augue neque gravida in fermentum et sollicitudin ac. A diam maecenas sed enim ut sem viverra aliquet eget. A condimentum vitae sapien pellentesque habitant morbi tristique senectus et. Urna duis convallis convallis tellus.
+
+          Vel elit scelerisque mauris pellentesque pulvinar. Scelerisque in dictum non consectetur a erat nam at. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Facilisi cras fermentum odio eu. Venenatis tellus in metus vulputate. Purus in massa tempor nec. Euismod lacinia at quis risus sed vulputate odio ut. Tortor dignissim convallis aenean et. Et odio pellentesque diam volutpat. Nunc congue nisi vitae suscipit tellus mauris. Vulputate dignissim suspendisse in est ante in. Sit amet massa vitae tortor condimentum. Nibh tellus molestie nunc non blandit massa enim nec dui. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Feugiat in ante metus dictum at. Viverra vitae congue eu consequat ac. Ultricies integer quis auctor elit sed. Nec ultrices dui sapien eget mi.
+          </div>
         </div>
+
         <div class="box" id="arrays">
           <h1 class="title">Arrays</h1>
           <p class="subtitle is-4">Arrays description</p>
-          <span class="expand button is-inverted is-link is-medium">See More</span>
+          <span class="expand button is-inverted is-link is-medium" id="arraysExpandButton" onclick="toggleDescription('arrays')"></span>
+          <div id="arraysDescription" class="description hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi enim nunc faucibus a pellentesque. Aliquet eget sit amet tellus cras adipiscing enim eu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Justo eget magna fermentum iaculis eu non diam. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Bibendum neque egestas congue quisque egestas diam in arcu. Nunc non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in. Facilisis gravida neque convallis a cras semper. Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Amet purus gravida quis blandit turpis cursus in hac habitasse. Sit amet consectetur adipiscing elit pellentesque habitant. Consectetur libero id faucibus nisl tincidunt. Odio eu feugiat pretium nibh ipsum consequat nisl. Quam lacus suspendisse faucibus interdum posuere lorem. Ullamcorper sit amet risus nullam eget felis. Malesuada fames ac turpis egestas sed tempus. Lorem ipsum dolor sit amet consectetur adipiscing.
+
+          Placerat in egestas erat imperdiet sed euismod nisi. Amet cursus sit amet dictum sit amet. Habitasse platea dictumst quisque sagittis purus sit. Nisi est sit amet facilisis magna etiam. Etiam sit amet nisl purus in. Sit amet massa vitae tortor condimentum lacinia. Massa sapien faucibus et molestie. Est velit egestas dui id ornare arcu odio ut sem. Pellentesque sit amet porttitor eget dolor. In tellus integer feugiat scelerisque varius morbi enim. A pellentesque sit amet porttitor eget dolor morbi non arcu. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Eget gravida cum sociis natoque. Et netus et malesuada fames ac. Augue neque gravida in fermentum et sollicitudin ac. A diam maecenas sed enim ut sem viverra aliquet eget. A condimentum vitae sapien pellentesque habitant morbi tristique senectus et. Urna duis convallis convallis tellus.
+
+          Vel elit scelerisque mauris pellentesque pulvinar. Scelerisque in dictum non consectetur a erat nam at. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Facilisi cras fermentum odio eu. Venenatis tellus in metus vulputate. Purus in massa tempor nec. Euismod lacinia at quis risus sed vulputate odio ut. Tortor dignissim convallis aenean et. Et odio pellentesque diam volutpat. Nunc congue nisi vitae suscipit tellus mauris. Vulputate dignissim suspendisse in est ante in. Sit amet massa vitae tortor condimentum. Nibh tellus molestie nunc non blandit massa enim nec dui. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Feugiat in ante metus dictum at. Viverra vitae congue eu consequat ac. Ultricies integer quis auctor elit sed. Nec ultrices dui sapien eget mi.
+          </div>
         </div>
-        <div class="box" id="for-loops">
+
+        <div class="box" id="forLoops">
           <h1 class="title">For Loops</h1>
           <p class="subtitle is-4">For loops description</p>
-          <span class="expand button is-inverted is-link is-medium">See More</span>
+          <span class="expand button is-inverted is-link is-medium" id="forLoopsExpandButton" onclick="toggleDescription('forLoops')"></span>
+          <div id="forLoopsDescription" class="description hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi enim nunc faucibus a pellentesque. Aliquet eget sit amet tellus cras adipiscing enim eu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Justo eget magna fermentum iaculis eu non diam. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Bibendum neque egestas congue quisque egestas diam in arcu. Nunc non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in. Facilisis gravida neque convallis a cras semper. Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Amet purus gravida quis blandit turpis cursus in hac habitasse. Sit amet consectetur adipiscing elit pellentesque habitant. Consectetur libero id faucibus nisl tincidunt. Odio eu feugiat pretium nibh ipsum consequat nisl. Quam lacus suspendisse faucibus interdum posuere lorem. Ullamcorper sit amet risus nullam eget felis. Malesuada fames ac turpis egestas sed tempus. Lorem ipsum dolor sit amet consectetur adipiscing.
+
+          Placerat in egestas erat imperdiet sed euismod nisi. Amet cursus sit amet dictum sit amet. Habitasse platea dictumst quisque sagittis purus sit. Nisi est sit amet facilisis magna etiam. Etiam sit amet nisl purus in. Sit amet massa vitae tortor condimentum lacinia. Massa sapien faucibus et molestie. Est velit egestas dui id ornare arcu odio ut sem. Pellentesque sit amet porttitor eget dolor. In tellus integer feugiat scelerisque varius morbi enim. A pellentesque sit amet porttitor eget dolor morbi non arcu. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Eget gravida cum sociis natoque. Et netus et malesuada fames ac. Augue neque gravida in fermentum et sollicitudin ac. A diam maecenas sed enim ut sem viverra aliquet eget. A condimentum vitae sapien pellentesque habitant morbi tristique senectus et. Urna duis convallis convallis tellus.
+
+          Vel elit scelerisque mauris pellentesque pulvinar. Scelerisque in dictum non consectetur a erat nam at. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Facilisi cras fermentum odio eu. Venenatis tellus in metus vulputate. Purus in massa tempor nec. Euismod lacinia at quis risus sed vulputate odio ut. Tortor dignissim convallis aenean et. Et odio pellentesque diam volutpat. Nunc congue nisi vitae suscipit tellus mauris. Vulputate dignissim suspendisse in est ante in. Sit amet massa vitae tortor condimentum. Nibh tellus molestie nunc non blandit massa enim nec dui. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Feugiat in ante metus dictum at. Viverra vitae congue eu consequat ac. Ultricies integer quis auctor elit sed. Nec ultrices dui sapien eget mi.
+          </div>
         </div>
+
         <div class="box" id="conditionals">
           <h1 class="title">Conditionals</h1>
           <p class="subtitle is-4">Conditionals description</p>
-          <span class="expand button is-inverted is-link is-medium">See More</span>
+          <span class="expand button is-inverted is-link is-medium" id="conditionalsExpandButton" onclick="toggleDescription('conditionals')"></span>
+          <div id="conditionalsDescription" class="description hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi enim nunc faucibus a pellentesque. Aliquet eget sit amet tellus cras adipiscing enim eu. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Justo eget magna fermentum iaculis eu non diam. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Bibendum neque egestas congue quisque egestas diam in arcu. Nunc non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in. Facilisis gravida neque convallis a cras semper. Condimentum vitae sapien pellentesque habitant morbi tristique senectus. Amet purus gravida quis blandit turpis cursus in hac habitasse. Sit amet consectetur adipiscing elit pellentesque habitant. Consectetur libero id faucibus nisl tincidunt. Odio eu feugiat pretium nibh ipsum consequat nisl. Quam lacus suspendisse faucibus interdum posuere lorem. Ullamcorper sit amet risus nullam eget felis. Malesuada fames ac turpis egestas sed tempus. Lorem ipsum dolor sit amet consectetur adipiscing.
+
+          Placerat in egestas erat imperdiet sed euismod nisi. Amet cursus sit amet dictum sit amet. Habitasse platea dictumst quisque sagittis purus sit. Nisi est sit amet facilisis magna etiam. Etiam sit amet nisl purus in. Sit amet massa vitae tortor condimentum lacinia. Massa sapien faucibus et molestie. Est velit egestas dui id ornare arcu odio ut sem. Pellentesque sit amet porttitor eget dolor. In tellus integer feugiat scelerisque varius morbi enim. A pellentesque sit amet porttitor eget dolor morbi non arcu. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Eget gravida cum sociis natoque. Et netus et malesuada fames ac. Augue neque gravida in fermentum et sollicitudin ac. A diam maecenas sed enim ut sem viverra aliquet eget. A condimentum vitae sapien pellentesque habitant morbi tristique senectus et. Urna duis convallis convallis tellus.
+
+          Vel elit scelerisque mauris pellentesque pulvinar. Scelerisque in dictum non consectetur a erat nam at. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Facilisi cras fermentum odio eu. Venenatis tellus in metus vulputate. Purus in massa tempor nec. Euismod lacinia at quis risus sed vulputate odio ut. Tortor dignissim convallis aenean et. Et odio pellentesque diam volutpat. Nunc congue nisi vitae suscipit tellus mauris. Vulputate dignissim suspendisse in est ante in. Sit amet massa vitae tortor condimentum. Nibh tellus molestie nunc non blandit massa enim nec dui. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Feugiat in ante metus dictum at. Viverra vitae congue eu consequat ac. Ultricies integer quis auctor elit sed. Nec ultrices dui sapien eget mi.
+          </div>
         </div>
       </section>
       <section class="column is-one-fifth section" id="links">
