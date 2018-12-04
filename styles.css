@@ -1,0 +1,64 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#layout {
+  flex: 1 1 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#banner {
+  border-bottom: 1px solid #dbdbdb;
+}
+
+#banner {
+  padding: 1.5rem;
+}
+
+#banner h1, h2 {
+  display: inline-block;
+  margin: 0;
+  margin-right: 1rem;
+}
+
+#nav {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  border-right: 1px solid #dbdbdb;
+}
+
+#content {
+  padding: 1.5rem;
+  overflow: scroll;
+}
+
+#content .box {
+  position: relative;
+}
+
+#content .box p {
+  margin: 0;
+  margin-top: -20px;
+}
+
+#content .box .expand {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+}
+
+#links {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  border-left: 1px solid #dbdbdb;
+}
+#links li {
+  margin-bottom: 1rem;
+}

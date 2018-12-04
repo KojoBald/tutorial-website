@@ -7,7 +7,81 @@
     <title>TeachMe JS</title>
     <link rel="stylesheet" type="text/css" href="styles.css" >
     <link rel="stylesheet" type="text/css" href="animate.css" >
+    <link rel="stylesheet" type="text/css" href="bulma.min.css" >
 </head>
 <body>
+  <div id="app">
+    <header id="banner">
+      <h1 class="title">
+        TeachMe.JS
+      </h1>
+      <h2 class="subtitle">
+        Learn the basics of Javascript with these fundamentals
+      </h2>
+    </header>
+    <div class="columns" id="layout">
+      <section class="column is-one-fifth section" id="nav">
+        <aside class="menu">
+          <p class="menu-label">Javascript</p>
+          <ul class="menu-list">
+            <li>
+              <a>Functions</a>
+              <ul>
+                <li><a>naming</a></li>
+                <li><a>arguments</a></li>
+                <li><a>return values</a></li>
+                <li><a>calling a function</a></li>
+              </ul>
+            </li>
+            <li><a>Objects</a></li>
+            <li><a>Arrays</a></li>
+            <li><a>For Loops</a></li>
+            <li><a>Conditionals</a></li>
+          </ul>
+        </aside>
+      </section>
+      <section class="column section" id="content">
+        <div class="box" id="functions">
+          <h1 class="title">Functions</h1>
+          <p class="subtitle is-4">functions description</p>
+          <span class="expand button is-inverted is-link is-medium">See More</span>
+        </div>
+        <div class="box" id="objects">
+          <h1 class="title">Objects</h1>
+          <p class="subtitle is-4">Objects description</p>
+          <span class="expand button is-inverted is-link is-medium">See More</span>
+        </div>
+        <div class="box" id="arrays">
+          <h1 class="title">Arrays</h1>
+          <p class="subtitle is-4">Arrays description</p>
+          <span class="expand button is-inverted is-link is-medium">See More</span>
+        </div>
+        <div class="box" id="for-loops">
+          <h1 class="title">For Loops</h1>
+          <p class="subtitle is-4">For loops description</p>
+          <span class="expand button is-inverted is-link is-medium">See More</span>
+        </div>
+        <div class="box" id="conditionals">
+          <h1 class="title">Conditionals</h1>
+          <p class="subtitle is-4">Conditionals description</p>
+          <span class="expand button is-inverted is-link is-medium">See More</span>
+        </div>
+      </section>
+      <section class="column is-one-fifth section" id="links">
+        <aside class="menu">
+          <p class="menu-label">More resources</p>
+          <ul class="menu-list">
+            <li><a target="_blank" href="https://vuejs.org/v2/guide/" class="button is-info is-outlined">VueJS</a></li>
+            <li><a target="_blank" href="https://lodash.com/docs/4.17.11" class="button is-info is-outlined">Lodash</a></li>
+            <li><a target="_blank" href="https://developer.mozilla.org/en-US/" class="button is-info is-outlined">MDN</a></li>
+            <li><a target="_blank" href="https://css-tricks.com/" class="button is-info is-outlined">CSS Tricks</a></li>
+            <li><a target="_blank" href="https://bulma.io/" class="button is-info is-outlined">Bulma</a></li>
+          </ul>
+        </aside>
+      </section>
+    </div>
+  </div>
 </body>
+
+<script src="app.js"></script>
 </html>
