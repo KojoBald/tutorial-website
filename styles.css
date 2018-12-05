@@ -70,6 +70,19 @@ body {
 #content #descriptions .description {
   padding: 1.5rem;
   flex: 0 0 100%;
+  overflow-y: scroll;
+}
+
+#content #descriptions .description h1 {
+  border-bottom: 3px solid #209cee;
+  padding-bottom: 2px;
+  display: inline-block;
+}
+
+#content #descriptions .description h2 {
+  border-bottom: 2px solid turquoise;
+  padding-bottom: 2px;
+  display: inline-block;
 }
 
 #links {
