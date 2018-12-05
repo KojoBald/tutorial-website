@@ -35,46 +35,41 @@ body {
   border-right: 1px solid #dbdbdb;
 }
 
-#content {
-  padding: 1.5rem;
-  overflow: scroll;
-}
-
-#content .box {
+#nav .menu-list li {
+  margin-bottom: .5rem;
   position: relative;
-  will-change: height;
-  transition: height 500ms ease;
   overflow: hidden;
 }
 
-#content .box p {
-  margin: 0;
-  margin-top: -20px;
+#nav .menu-list li.active {
+  transition: height 350ms ease;
 }
 
-#content .box .expand {
+#nav .menu-list li ul {
+  margin: .5rem 0 0 0;
+  overflow: hidden;
+  line-height: 1;
+  font-size: .9rem;
   position: absolute;
-  bottom: .5rem;
-  right: .5rem;
 }
 
-#content .box .expand::before {
-  content: 'See More';
+#content {
+  padding: 0;
+  overflow: hidden;
 }
 
-#content .box .expand.expanded::before {
-  content: 'See Less';
+#content #descriptions {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0);
+  transition: transform 350ms ease;
 }
 
-.description {
-  position: absolute;
-  padding: 1.5rem 1.5rem 0 0;
-  margin-bottom: 1.5rem;
-}
-
-.description.hidden {
-  visibility: hidden;
-  top: 100%;
+#content #descriptions .description {
+  padding: 1.5rem;
+  flex: 0 0 100%;
 }
 
 #links {

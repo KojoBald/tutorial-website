@@ -1,65 +1,72 @@
-var currentToggled = null;
 var contentElement = document.getElementById('content');
+var descriptionsElement = document.getElementById('descriptions')
 var contentControls = {
   functions: {
     navButton: document.getElementById('functionsNavButton'),
-    expandButton: document.getElementById('functionsExpandButton'),
-    description: document.getElementById('functionsDescription'),
-    container: document.getElementById('functions')
+    subMenu: document.getElementById('functionsSubMenu'),
+    description: document.getElementById('_functions')
   },
   objects: {
     navButton: document.getElementById('objectsNavButton'),
-    expandButton: document.getElementById('objectsExpandButton'),
-    description: document.getElementById('objectsDescription'),
-    container: document.getElementById('objects')
+    subMenu: document.getElementById('objectsSubMenu'),
+    description: document.getElementById('_objects')
   },
   arrays: {
     navButton: document.getElementById('arraysNavButton'),
-    expandButton: document.getElementById('arraysExpandButton'),
-    description: document.getElementById('arraysDescription'),
-    container: document.getElementById('arrays')
+    subMenu: document.getElementById('arraysSubMenu'),
+    description: document.getElementById('_arrays')
   },
   forLoops: {
     navButton: document.getElementById('forLoopsNavButton'),
-    expandButton: document.getElementById('forLoopsExpandButton'),
-    description: document.getElementById('forLoopsDescription'),
-    container: document.getElementById('forLoops')
+    subMenu: document.getElementById('forLoopsSubMenu'),
+    description: document.getElementById('_forLoops')
   },
   conditionals: {
     navButton: document.getElementById('conditionalsNavButton'),
-    expandButton: document.getElementById('conditionalsExpandButton'),
-    description: document.getElementById('conditionalsDescription'),
-    container: document.getElementById('conditionals')
+    subMenu: document.getElementById('conditionalsSubMenu'),
+    description: document.getElementById('_conditionals')
   }
-};
+}
+var currentToggled = contentControls['functions'];
 
-function toggleDescription(id) {
+function onNavButtonClick(id) {
+  triggeredByClick = true;
+  changeDescription(id);
+}
+
+function changeDescription(id) {
   let control = contentControls[id];
-  updateToggleControls(control);
-  if(control === currentToggled) {
-    hideDescription(control);
-    currentToggled = null;
-  } else {
-    if(currentToggled) {
-      updateToggleControls(currentToggled);
-      hideDescription(currentToggled);
-    }
-    showDescription(control);
-    currentToggled = control;
+  descriptionsElement.style.transform = `translateX(-${control.description.offsetLeft}px)`;
+
+  currentToggled.navButton.parentElement.classList.remove('active');
+  currentToggled.navButton.parentElement.style.height = `${currentToggled.navButton.parentElement.offsetHeight - currentToggled.subMenu.offsetHeight}px`;
+  currentToggled.navButton.classList.remove('is-active');
+
+  control.navButton.parentElement.classList.add('active');
+  control.navButton.parentElement.style.height = `${control.navButton.parentElement.offsetHeight + control.subMenu.offsetHeight}px`;
+  control.navButton.classList.add('is-active');
+
+  currentToggled = control;
+  window.location.hash = id;
+}
+
+//Watch for hash changes entered by user
+var triggeredByClick = false;
+window.onhashchange = function(ev) {
+  let hash = location.hash.slice(1);
+  if(!triggeredByClick && contentControls[hash]) {
+    changeDescription(hash);
   }
+  triggeredByClick = false;
 }
 
-function updateToggleControls(control) {
-    control.navButton.classList.toggle('is-active');
-    control.expandButton.classList.toggle('expanded');
-}
-
-function showDescription(control) {
-  control.container.style.height = `${control.container.offsetHeight + control.description.offsetHeight}px`;
-  control.description.classList.remove('hidden');
-}
-
-function hideDescription(control) {
-  control.container.style.height = `${control.container.offsetHeight - control.description.offsetHeight}px`;
-  control.description.classList.add('hidden');
+//Check if hash is present on page load
+if(location.hash !== '' ) {
+  console.log('had hash on page load');
+  let hash = location.hash.slice(1);
+  if(contentControls[hash]) {
+    changeDescription(hash);
+  }
+} else {
+  location.hash = '#functions';
 }
