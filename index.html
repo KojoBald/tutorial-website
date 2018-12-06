@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TeachMe JS</title>
+    <title>TeachMe.JS</title>
     <link rel="stylesheet" type="text/css" href="styles.css" >
     <link rel="stylesheet" type="text/css" href="animate.css" >
     <link rel="stylesheet" type="text/css" href="bulma.min.css" >
@@ -12,7 +12,7 @@
 <body>
   <div id="app">
     <header id="banner">
-      <h1 class="title">
+      <h1 class="title rubberBand animated">
         TeachMe.JS
       </h1>
       <h2 class="subtitle">
@@ -28,7 +28,7 @@
               <a class="is-active" id="functionsNavButton" onclick="onNavButtonClick('functions')">Functions</a>
               <ul id="functionsSubMenu">
                 <li><a>naming</a></li>
-                <li><a>arguments</a></li>
+                <li><a>parameters</a></li>
                 <li><a>calling a function</a></li>
                 <li><a>return values</a></li>
               </ul>
@@ -71,77 +71,199 @@
       </section>
       <section class="column section" id="content">
         <div id="descriptions">
-          <div class="description" id="_functions">
+          <article class="description" id="_functions">
             <h1 class="title">Functions</h1>
-            <p class="subtitle">functions description</p>
+            <p class="subtitle">
+              Functions are a named piece of code that can be used in other parts of your program.
+              They are usually meant to perform one task well and help make code easier to read by substituting otherwise confusing code with a well named function call.
+            </p>
 
-            <h2 class="title is-4">Naming</h2>
-            <p class="subtitle is-6">naming explanation</p>
+            <div class="sub-description">
+              <pre><code>
+<span class="keyword">function</span> <span class="function">doTheThing</span>() {
+    console.<span class="function">log</span>(<span class="string">"It's working!"</span>);
+}
+                </code></pre>
+            </div>
 
-            <h2 class="title is-4">Arguments</h2>
-            <p class="subtitle is-6">arguments explanation</p>
+            <div class="sub-description">
+              <h2 class="title is-4">Naming</h2>
+              <p class="subtitle is-6">
+                Functions follow the same naming rules as variables. So they can contain letters, numbers, underscores, and dollar signs. But a function name cannot start with a number.<br/>
+                It's convention that function names are written in <span class="code">camelCase</span>, but this is not an enforced rule.<br/><br/>
+                It is important that your function names are descriptive but not verbose, so a programmer can get a sense of what the function does without needing to pick apart the function itself.
+              </p>
+            </div>
 
-            <h2 class="title is-4">Calling a function</h2>
-            <p class="subtitle is-6">calling explanation</p>
+            <div class="sub-description">
+              <h2 class="title is-4">Parameters</h2>
+              <p class="subtitle is-6">
+                Parameters (or arguments) are variables passed into a function, that a function can use or operate upon.<br/>
+                You could make a function that accepts up to 255 parameters, though using a lot of parameters is sometimes a sign that your function may need to be split into a few smaller functions.
+              </p>
+              <div class="example">
+                <pre><code>
+<span class="keyword">function</span> <span class="function">addNumbers</span>(number1, number2) {
+  <span class="keyword">let</span> sum <span class="operator">=</span> number1 <span class="operator">+</span> number2;
+  console.<span class="function">log</span>(sum);
+}
+                </code></pre>
+              </div>
+              <p class="subtitle is-6">
+                Functions also have access to an <span class="code">arguments</span> variable that acts as an array holding all arguments passed into the function. <br/>
+                This is useful if you want to create a function that accepts an unknown number of parameters.
+              </p>
+              <div class="example">
+                <pre><code>
+<span class="keyword">function</span> <span class="function">addNumbers</span>() {
+  <span class="keyword">let</span> sum <span class="operator">=</span> <span class="literal">0</span>;
+  <span class="keyword">for</span>(number <span class="keyword">of</span> arguments) {
+    sum <span class="operator">+=</span> number;
+  }
+  console.<span class="function">log</span>(sum);
+}
+                </code></pre>
+              </div>
+            </div>
 
-            <h2 class="title is-4">Return Values</h2>
-            <p class="subtitle is-6">return values explanation</p>
-          </div>
-          <div class="description" id="_objects">
+            <div class="sub-description">
+              <h2 class="title is-4">Calling a function</h2>
+              <p class="subtitle is-6">
+                To execute the code written in a function, you have to "call" (or invoke) the function. This is done by simply writing the function name followed by <span class="code">()</span>.
+              </p>
+
+              <div class="example">
+                <pre><code>
+<span class="function">doTheThing</span>();
+                </code></pre>
+              </div>
+              <p class="subtitle is-6">
+                You can pass arguments to a function by writing them as a comma separated list in between the <span class="code">()</span>.
+              </p>
+              <div class="example">
+                <pre><code>
+<span class="function">addNumbers</span>(<span class="literal">5</span>, <span class="literal">7</span>, <span class="literal">3</span>);
+                </code></pre>
+              </div>
+            </div>
+
+            <div class="sub-description">
+              <h2 class="title is-4">Return Values</h2>
+              <p class="subtitle is-6">
+                Often times, you'll want to use a value from the function outside of the function. This can be achieved with a <span class="code">return</span> statement.
+              </p>
+              <div class="example">
+                <pre><code>
+<span class="keyword">function</span> <span class="function">addNumbers</span>() {
+  <span class="keyword">let</span> sum <span class="operator">=</span> <span class="literal">0</span>;
+  <span class="keyword">for</span>(number <span class="keyword">of</span> arguments) {
+    sum <span class="operator">+=</span> number;
+  }
+  <span class="keyword">return</span> sum;
+}
+<span class="keyword">let</span> number <span class="operator">=</span> <span class="function">addNumbers</span>(<span class="literal">5</span>, <span class="literal">7</span>, <span class="literal">3</span>);
+<span class="comment">/* Thanks to the return statement in our addNumbers function,
+the result is now stored in a variable called number */</span>
+                </code></pre>
+              </div>
+              <p class="subtitle is-6">
+                It's important to note that the function will stop execution as soon as the <span class="code">return</span> statement is reached.<br/>
+                This can be used to exit a function early if needed.
+              </p>
+
+              <div class="example">
+                <pre><code>
+  <span class="keyword">function</span> <span class="function">doTheThing</span>(shouldStop) {
+      <span class="keyword">if</span>(shouldStop) {
+        <span class="keyword">return</span>;
+      }
+      console.<span class="function">log</span>(<span class="string">"It's working!"</span>);
+  }
+                  </code></pre>
+              </div>
+            </div>
+          </article>
+          <article class="description" id="_objects">
             <h1 class="title">Objects</h1>
             <p class="subtitle">objects description</p>
 
-            <h2 class="title is-4">Key</h2>
-            <p class="subtitle is-6">key explanation</p>
+            <div class="sub-description">
+              <h2 class="title is-4">Key</h2>
+              <p class="subtitle is-6">key explanation</p>
+            </div>
 
-            <h2 class="title is-4">Value</h2>
-            <p class="subtitle is-6">arguments explanation</p>
+            <div class="sub-description">
+              <h2 class="title is-4">Value</h2>
+              <p class="subtitle is-6">arguments explanation</p>
+            </div>
 
-            <h2 class="title is-4">Common Methods</h2>
-            <p class="subtitle is-6">common methods explanation</p>
-          </div>
-          <div class="description" id="_arrays">
+            <div class="sub-description">
+              <h2 class="title is-4">Common Methods</h2>
+              <p class="subtitle is-6">common methods explanation</p>
+            </div>
+          </article>
+          <article class="description" id="_arrays">
             <h1 class="title">Arrays</h1>
             <p class="subtitle">arrays description</p>
 
-            <h2 class="title is-4">0 Based Index</h2>
-            <p class="subtitle is-6">index explanation</p>
+            <div class="sub-description">
+              <h2 class="title is-4">0 Based Index</h2>
+              <p class="subtitle is-6">index explanation</p>
+            </div>
 
-            <h2 class="title is-4">What can an array store</h2>
-            <p class="subtitle is-6">storage explanation</p>
+            <div class="sub-description">
+              <h2 class="title is-4">What can an array store</h2>
+              <p class="subtitle is-6">storage explanation</p>
+            </div>
 
-            <h2 class="title is-4">Common properties/methods</h2>
-            <p class="subtitle is-6">common properties/methods explanation</p>
-          </div>
-          <div class="description" id="_forLoops">
+            <div class="sub-description">
+              <h2 class="title is-4">Common properties/methods</h2>
+              <p class="subtitle is-6">common properties/methods explanation</p>
+            </div>
+          </article>
+          <article class="description" id="_forLoops">
               <h1 class="title">For Loops</h1>
               <p class="subtitle">for loops description</p>
 
-              <h2 class="title is-4">Basic For Loop</h2>
-              <p class="subtitle is-6">basic for loop explanation</p>
+              <div class="sub-description">
+                <h2 class="title is-4">Basic For Loop</h2>
+                <p class="subtitle is-6">basic for loop explanation</p>
+              </div>
 
-              <h2 class="title is-4">For In</h2>
-              <p class="subtitle is-6">for in loop explanation</p>
+              <div class="sub-description">
+                <h2 class="title is-4">For In</h2>
+                <p class="subtitle is-6">for in loop explanation</p>
+              </div>
 
-              <h2 class="title is-4">For Each</h2>
-              <p class="subtitle is-6">for each loop explanation</p>
-          </div>
-          <div class="description" id="_conditionals">
+              <div class="sub-description">
+                <h2 class="title is-4">For Each</h2>
+                <p class="subtitle is-6">for each loop explanation</p>
+              </div>
+          </article>
+          <article class="description" id="_conditionals">
               <h1 class="title">Conditionals</h1>
               <p class="subtitle">conditionals description</p>
 
-              <h2 class="title is-4">If</h2>
-              <p class="subtitle is-6">if statement explanation</p>
+              <div class="sub-description">
+                <h2 class="title is-4">If</h2>
+                <p class="subtitle is-6">if statement explanation</p>
+              </div>
 
-              <h2 class="title is-4">Else</h2>
-              <p class="subtitle is-6">else statement explanation</p>
+              <div class="sub-description">
+                <h2 class="title is-4">Else</h2>
+                <p class="subtitle is-6">else statement explanation</p>
+              </div>
 
-              <h2 class="title is-4">Else/If</h2>
-              <p class="subtitle is-6">else/if explanation</p>
+              <div class="sub-description">
+                <h2 class="title is-4">Else/If</h2>
+                <p class="subtitle is-6">else/if explanation</p>
+              </div>
 
-              <h2 class="title is-4">Switch</h2>
-              <p class="subtitle is-6">switch statement explanation</p>
-          </div>
+              <div class="sub-description">
+                <h2 class="title is-4">Switch</h2>
+                <p class="subtitle is-6">switch statement explanation</p>
+              </div>
+          </article>
         </div>
       </section>
       <section class="column is-one-fifth section" id="links">
@@ -155,6 +277,7 @@
             <li><a target="_blank" href="https://bulma.io/" class="button is-info is-outlined">Bulma</a></li>
           </ul>
         </aside>
+        <footer><span>&lt;3</span><a class="is-link">Kaleb Baldwin, 2018</a></footer>
       </section>
     </div>
   </div>

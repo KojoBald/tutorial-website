@@ -37,6 +37,7 @@ function onNavButtonClick(id) {
 function changeDescription(id) {
   let control = contentControls[id];
   descriptionsElement.style.transform = `translateX(-${control.description.offsetLeft}px)`;
+  if(control === currentToggled) return;
 
   currentToggled.navButton.parentElement.classList.remove('active');
   currentToggled.navButton.parentElement.style.height = `${currentToggled.navButton.parentElement.offsetHeight - currentToggled.subMenu.offsetHeight}px`;
@@ -69,4 +70,9 @@ if(location.hash !== '' ) {
   }
 } else {
   location.hash = '#functions';
+}
+
+for(let control in contentControls) {
+  control = contentControls[control];
+  control.navButton.parentElement.style.height = `${control.navButton.parentElement.offsetHeight}px`;
 }
