@@ -24,8 +24,8 @@
         <aside class="menu">
           <p class="menu-label">Javascript Fundamentals</p>
           <ul class="menu-list">
-            <li class="active">
-              <a class="is-active" id="functionsNavButton" onclick="onNavButtonClick('functions')">Functions</a>
+            <li>
+              <a id="functionsNavButton" onclick="onNavButtonClick('functions')">Functions</a>
               <ul id="functionsSubMenu">
                 <li><a>naming</a></li>
                 <li><a>parameters</a></li>
@@ -36,8 +36,8 @@
             <li>
               <a id="objectsNavButton" onclick="onNavButtonClick('objects')">Objects</a>
               <ul id="objectsSubMenu">
-                <li><a>key</a></li>
-                <li><a>value</a></li>
+                <li><a>key/value pairs</a></li>
+                <li><a>accessing a property</a></li>
                 <li><a>common methods</a></li>
               </ul>
             </li>
@@ -89,7 +89,7 @@
             <div class="sub-description">
               <h2 class="title is-4">Naming</h2>
               <p class="subtitle is-6">
-                Functions follow the same naming rules as variables. So they can contain letters, numbers, underscores, and dollar signs. But a function name cannot start with a number.<br/>
+                Functions follow the same naming rules as variables. So they can contain letters (<span class="code">A-Za-z</span>), numbers(<span class="code">0-9</span>), underscores (<span class="code">_</span>), and dollar signs (<span class="code">$</span>). But a function name cannot start with a number.<br/>
                 It's convention that function names are written in <span class="code">camelCase</span>, but this is not an enforced rule.<br/><br/>
                 It is important that your function names are descriptive but not verbose, so a programmer can get a sense of what the function does without needing to pick apart the function itself.
               </p>
@@ -185,21 +185,108 @@ the result is now stored in a variable called number */</span>
           </article>
           <article class="description" id="_objects">
             <h1 class="title">Objects</h1>
-            <p class="subtitle">objects description</p>
+            <p class="subtitle">
+              Objects are a container for a set of related, named variables called properties. <br />
+              Objects are created (or instantiated) with a set of <span class="code">{}</span> that wrap around all of its properties.
+            </p>
 
             <div class="sub-description">
-              <h2 class="title is-4">Key</h2>
-              <p class="subtitle is-6">key explanation</p>
+              <div class="example">
+                <pre><code>
+<span class="keyword">let</span> myCar <span class="operator">=</span> {
+  make: <span class="string">'Kia'</span>,
+  model: <span class="string">'Spectra'</span>,
+  color: <span class="string">'Blue'</span>,
+  miles: <span class="literal">140000</span>,
+  isCool: <span class="literal">false</span>
+}
+                  </code></pre>
+              </div>
             </div>
 
             <div class="sub-description">
-              <h2 class="title is-4">Value</h2>
-              <p class="subtitle is-6">arguments explanation</p>
+              <h2 class="title is-4">Key/Value Pairs</h2>
+              <p class="subtitle is-6">
+                Object properties are made up of what are called "key/value pairs". If you think of the object property as a variable, the key is the name of the variable and the value is the data that the variable holds.<br />
+                The key is separated from the value using a <span class="code">:</span>.
+              <p/>
+
+              <div class="example">
+                <pre><code>
+<span class="keyword">let</span> obj <span class="operator">=</span> {
+  key: <span class="string">'value'</span>
+}
+                  </code></pre>
+              </div>
+
+              <p class="subtitle is-6">
+                When an object has more than one property (and they generally will), they are separated by a <span class="code">,</span>.
+              </p>
+
+              <div class="example">
+                <pre><code>
+<span class="comment">//objects can be declared on one line</span>
+<span class="keyword">let</span> obj2 <span class="operator">=</span> { key1: <span class="literal">1</span>, key2: <span class="literal">2</span> }
+
+<span class="comment">//or on several</span>
+<span class="keyword">let</span> obj3 <span class="operator">=</span> {
+  key1: <span class="literal">1</span>,
+  key2: <span class="literal">2</span>
+}
+                  </code></pre>
+              </div>
+            </div>
+
+            <div class="sub-description">
+              <h2 class="title is-4">Accessing a Property</h2>
+              <p class="subtitle is-6">
+                We use what is called <span class="code">dot notation</span> in order to use a property in an object. It is simply the name of the object followed by a <span class="code">.</span> and then the name of the property you are trying to use.
+              </p>
+
+              <div class="example">
+                <pre><code>
+console.<span class="function">log</span>( myCar.make ); <span class="comment">// -> outputs 'Kia'</span>
+<span class="comment">// now you can use object properties just like any other variable</span>
+                  </code></pre>
+              </div>
+
+              <p class="subtitle is-6">
+                We can also use what is called <span class="code">bracket notation</span> in order to access a property. This is very similar to accessing an index in an array, but instead of putting a number between the <span class="code">[]</span>, we put the <span class="code">key</span> of the property we are trying to access.<br/>
+                This can be useful if you have a string that holds a specific key for an object.
+              </p>
+
+              <div class="example">
+                <pre><code>
+<span class="keyword">let</span> key <span class="operator">=</span> <span class="string">'model'</span>;
+console.<span class="function">log</span>( myCar[key] ); <span class="comment">// -> outputs 'Spectra'</span>
+console.<span class="function">log</span>( myCar[<span class="string">'model'</span>] ); <span class="comment">// -> ALSO outputs 'Spectra'</span>
+                  </code></pre>
+              </div>
+
             </div>
 
             <div class="sub-description">
               <h2 class="title is-4">Common Methods</h2>
-              <p class="subtitle is-6">common methods explanation</p>
+              <p class="subtitle is-6">
+                A <span class="code">method</span> is simply a function that belongs to (is a property of) an object. You can access a method just like you would any other property of an object, and call it the same way you would any other function. <br /> <br />
+                <span class="code">console.log()</span> is an example of a method that belongs to the console object.
+              </p>
+
+              <table class="table is-bordered is-striped is-fullwidth">
+                <tr>
+                  <td><span class="code">Object.keys(obj)</span></td>
+                  <td>Returns an array of keys of an object</td>
+                </tr>
+                <tr>
+                  <td><span class="code">Object.values(obj)</span></td>
+                  <td>Returns an array of values of an object</td>
+                </tr>
+                <tr>
+                  <td><span class="code">Object.assign(target, source)</span></td>
+                  <td>Copies the properties of the source(s) onto the target</td>
+                </tr>
+              </table>
+
             </div>
           </article>
           <article class="description" id="_arrays">
@@ -270,9 +357,11 @@ the result is now stored in a variable called number */</span>
         <aside class="menu">
           <p class="menu-label">More resources</p>
           <ul class="menu-list">
+          <li><a target="_blank" href="https://developer.mozilla.org/en-US/" class="button is-info is-outlined">MDN</a></li>
+          <li><a target="_blank" href="https://webpack.js.org/" class="button is-info is-outlined">Webpack</a></li>
+          <li><a target="_blank" href="https://www.npmjs.com/" class="button is-info is-outlined">NPM</a></li>
             <li><a target="_blank" href="https://vuejs.org/v2/guide/" class="button is-info is-outlined">VueJS</a></li>
             <li><a target="_blank" href="https://lodash.com/docs/4.17.11" class="button is-info is-outlined">Lodash</a></li>
-            <li><a target="_blank" href="https://developer.mozilla.org/en-US/" class="button is-info is-outlined">MDN</a></li>
             <li><a target="_blank" href="https://css-tricks.com/" class="button is-info is-outlined">CSS Tricks</a></li>
             <li><a target="_blank" href="https://bulma.io/" class="button is-info is-outlined">Bulma</a></li>
           </ul>

@@ -27,7 +27,7 @@ var contentControls = {
     description: document.getElementById('_conditionals')
   }
 }
-var currentToggled = contentControls['functions'];
+var currentToggled;
 
 function onNavButtonClick(id) {
   triggeredByClick = true;
@@ -36,12 +36,15 @@ function onNavButtonClick(id) {
 
 function changeDescription(id) {
   let control = contentControls[id];
-  descriptionsElement.style.transform = `translateX(-${control.description.offsetLeft}px)`;
   if(control === currentToggled) return;
 
-  currentToggled.navButton.parentElement.classList.remove('active');
-  currentToggled.navButton.parentElement.style.height = `${currentToggled.navButton.parentElement.offsetHeight - currentToggled.subMenu.offsetHeight}px`;
-  currentToggled.navButton.classList.remove('is-active');
+  descriptionsElement.style.transform = `translateX(-${control.description.offsetLeft}px)`;
+
+  if(currentToggled) {
+    currentToggled.navButton.parentElement.classList.remove('active');
+    currentToggled.navButton.parentElement.style.height = `${currentToggled.navButton.parentElement.offsetHeight - currentToggled.subMenu.offsetHeight}px`;
+    currentToggled.navButton.classList.remove('is-active');
+  }
 
   control.navButton.parentElement.classList.add('active');
   control.navButton.parentElement.style.height = `${control.navButton.parentElement.offsetHeight + control.subMenu.offsetHeight}px`;
@@ -63,7 +66,6 @@ window.onhashchange = function(ev) {
 
 //Check if hash is present on page load
 if(location.hash !== '' ) {
-  console.log('had hash on page load');
   let hash = location.hash.slice(1);
   if(contentControls[hash]) {
     changeDescription(hash);
