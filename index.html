@@ -309,7 +309,8 @@ console.<span class="function">log</span>( myCar[<span class="string">'model'</s
               <div class="example">
                 <pre><code>
 <span class="keyword">let</span> emptyArray <span class="operator">=</span> []; <span class="comment">// this creates an empty array; an array with no data</span>
-<span class="keyword">let</span> array <span class="operator">=</span> [<span class="string">'Hello'</span>, <span class="string">'World'</span>, <span class="literal">2018</span>]; <span class="comment">// this creates an array that holds two strings and one number</span>
+<span class="keyword">let</span> array <span class="operator">=</span> [<span class="string">'Hello'</span>, <span class="string">'World'</span>, <span class="literal">2018</span>];
+<span class="comment">// this creates an array that holds two strings and one number</span>
                   </code></pre>
               </div>
             </div>
@@ -321,6 +322,11 @@ console.<span class="function">log</span>( myCar[<span class="string">'model'</s
               <div class="example">
                 <pre><code>
 console.<span class="function">log</span>( array[<span class="literal">0</span>] ); <span class="comment">// -> outputs Hello</span>
+console.<span class="function">log</span>( array[array.length <span class="operator">-</span> <span class="literal">1</span>] ); <span class="comment">// -> outputs 2018</span><span class="comment">
+/* ^ this is a simple way to access the last item in an array.
+Subtracting 1 is necessary because of the 0 based index.
+If your array has 5 items, the last item is stored at index 4 */
+</span>
                 </code></pre>
               </div>
             </div>
