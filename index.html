@@ -8,16 +8,28 @@
     <link rel="stylesheet" type="text/css" href="styles.css" >
     <link rel="stylesheet" type="text/css" href="animate.css" >
     <link rel="stylesheet" type="text/css" href="bulma.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
   <div id="app">
     <header id="banner">
-      <h1 class="title rubberBand animated">
-        TeachMe.JS
-      </h1>
-      <h2 class="subtitle">
-        Learn the basics of Javascript with these fundamentals
-      </h2>
+      <div id="brand">
+        <h1 class="title rubberBand animated">
+          TeachMe.JS
+        </h1>
+        <h2 class="subtitle">
+          Learn the basics of Javascript with these fundamentals
+        </h2>
+      </div>
+
+      <div id="search-area">
+        <div class="control has-icons-left">
+          <input type="text" id="search" class="input is-info"/>
+          <span class="icon is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+      </div>
     </header>
     <div class="columns" id="layout">
       <section class="column is-one-fifth section" id="nav">
@@ -291,14 +303,29 @@ console.<span class="function">log</span>( myCar[<span class="string">'model'</s
           </article>
           <article class="description" id="_arrays">
             <h1 class="title">Arrays</h1>
-            <p class="subtitle">arrays description</p>
+            <p class="subtitle">Arrays are a collection of data that can be thought of similar to a list. Arrays store your data (of any type) in the order you added it to the array, and work off of a <span class="code">0 Based Index</span> meaning that the first item is stored at index (position) 0.</p>
 
             <div class="sub-description">
-              <h2 class="title is-4">0 Based Index</h2>
-              <p class="subtitle is-6">index explanation</p>
+              <div class="example">
+                <pre><code>
+<span class="keyword">let</span> emptyArray <span class="operator">=</span> []; <span class="comment">// this creates an empty array; an array with no data</span>
+<span class="keyword">let</span> array <span class="operator">=</span> [<span class="string">'Hello'</span>, <span class="string">'World'</span>, <span class="literal">2018</span>]; <span class="comment">// this creates an array that holds two strings and one number</span>
+                  </code></pre>
+              </div>
             </div>
 
             <div class="sub-description">
+              <h2 class="title is-4">Accessing an Array Item</h2>
+              <p class="subtitle is-6">You can access data stored in an array with <span class="code">bracket notation</span>. Simply put the name of the array followed by <span class="code">[]</span> with the index of the item you are trying to access in between the brackets.</p>
+
+              <div class="example">
+                <pre><code>
+console.<span class="function">log</span>( array[0] ); <span class="comment">// -> outputs Hello</span>
+                </code></pre>
+              </div>
+            </div>
+
+            <!-- <div class="sub-description">
               <h2 class="title is-4">What can an array store</h2>
               <p class="subtitle is-6">storage explanation</p>
             </div>
@@ -306,7 +333,7 @@ console.<span class="function">log</span>( myCar[<span class="string">'model'</s
             <div class="sub-description">
               <h2 class="title is-4">Common properties/methods</h2>
               <p class="subtitle is-6">common properties/methods explanation</p>
-            </div>
+            </div> -->
           </article>
           <article class="description" id="_forLoops">
               <h1 class="title">For Loops</h1>

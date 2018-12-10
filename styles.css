@@ -18,10 +18,14 @@ body {
 
 #banner {
   border-bottom: 1px solid #dbdbdb;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-#banner {
-  padding: 1.5rem;
+#banner #search-area input {
+  border-radius: 20px;
+  min-width: 300px;
 }
 
 #banner h1, h2 {
